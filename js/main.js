@@ -12,22 +12,21 @@ claGitHub.config(function ($routeProvider) {
 });
 
 //Controler
-claGitHub.controller('repoController', function ($scope, reposFactory) {
-	$scope.repos = reposFactory;
+claGitHub.controller('repoController', function ($scope, $http, reposFactory) {
+	reposFactory.getRepos().success(function(data){
+		$scope.repos = data;
+	});
 });
 
 //Factory
 claGitHub.factory('reposFactory', function($http){
-
-	var repos = {
-		content:null
+	return {
+		getRepos : function() {
+			return $http({
+				url: 'https://api.github.com/users/claromentis/repos',
+				method: 'GET'
+			});
+		}
 	};
-
-	$http.get('https://api.github.com/users/claromentis/repos').success(function(data){
-		repos.content = data;
-	});
-
-	return repos;
-
 });
 
