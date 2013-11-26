@@ -1,8 +1,11 @@
 <!-- Repeating section for featured repositories -->
-<div data-ng-repeat="repo in repos" class="repo-tile">
+<div ng-repeat="repo in repos | filter:searchText" class="repo-tile">
 	<h2>{{repo.name}}</h2>
+	<small>{{repo.language}}</small>
 	<ul>
 		<li>{{repo.description}}</li>
-		<li><a href="{{repo.tags[0].zipball_url}}">{{repo.tags[0].name}}</a></li>
+		<li ng-show="repo.tags[0].zipball_url.length" class="tile-latest"><a href="{{repo.tags[0].zipball_url}}">Latest release {{repo.tags[0].name}}</a></li>
+		<li ng-show="!repo.tags[0].zipball_url.length" class="tile-none">No stable release</li>
+		<li class="tile-view"><a href="{{repo.html_url}}">View on GitHub</a></li>
 	</ul>
 </div>

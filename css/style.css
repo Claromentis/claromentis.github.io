@@ -1,24 +1,135 @@
+/* Global */
+@font-face {
+    font-family: "Opificio";
+    src: url(/css/Opificio.ttf) format("truetype");
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body{
+	background: #eee;
+	color: #545454;
+}
+
+a, a:hover {
+	color: #00adef;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+small {
+	color: #999;
+}
+
+h1 {
+	font-size: 36px;
+	padding: 5px 0 5px 10px;
+}
+
+h1, h2 {
+	font-family: Opificio;
+}
+
+p, li {
+	line-height: 24px;
+	font-size: 13px;
+}
+
+/* Header Section */
+
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+	background: #00adef;
+}
+
+.navbar .brand {
+	color: #fff;
+	font-family: Opificio;
+	text-shadow: none;
+	margin-top: 5px;
+}
+
+header {
+	background: #fff url(/img/hd.png) no-repeat -50px -40px;
+	border: 1px solid #ccc;
+	padding: 20px;
+	margin: 60px 0 10px 0;
+}
+
+header h1 {
+	background: #fff;
+	padding:  10px 0px 5px 10px;
+	margin-top: 50px;
+	margin-left: -20px;
+	width: 250px;
+	font-weight: lighter;
+}
+
+.navbar input {
+	margin-top: 10px;
+	padding: 14px;
+}
+
+/* Repository styles */
+
 .repo-tile {
 	border: 1px solid #ccc;
 	padding: 20px;
 	background: #fff;
 	float: left;
-	width: 24%;
-	margin: 0 1% 1% 0;
+	width: 32%;
+	margin: 0 2% 2% 0;
+}
+
+.repo-tile:nth-child(3n+3) {
+	margin-right: 0;
 }
 
 .repo-tile {
-	height: 300px;
+	height: 250px;
 }
 
 .repo-tile h2 {
 	font-size: 18px;
 	font-weight: bold;
-	margin: 0 0 10px 0
+	margin: 0 0 10px 0;
+	line-height: 23px;
+	margin-bottom: 0;
 }
 
 .repo-tile ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+
+.repo-tile li {
+	line-height: 26px;
+}
+
+.repo-tile li:first-child {
+	margin-bottom: 5px;
+}
+
+.tile-view a, .tile-latest a, .tile-none {
+	padding-left: 24px;
+	padding-bottom: 4px;
+}
+
+.tile-view a {
+	background: url(/img/gh.png) no-repeat 0 -2px;
+}
+
+.tile-latest a {
+	background: url(/img/dl.png) no-repeat 0 -1px;
+}
+
+.tile-none {
+	color: #ccc;
+	background: url(/img/none.png) no-repeat 0 2px;
 }

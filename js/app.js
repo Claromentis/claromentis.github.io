@@ -13,10 +13,8 @@ claGitHub.config(function ($routeProvider) {
 
 //Controller
 claGitHub.controller('repoController', function ($scope, reposFactory) {
-
-		$scope.repos = reposFactory.getRepos();
-		console.log($scope.repos);
-
+	$scope.repos = reposFactory.getRepos();
+	console.log($scope.repos);
 });
 
 // Factory
@@ -25,7 +23,8 @@ claGitHub.factory('reposFactory', ['$http', function($http){
     var repos = {};
 
     repos.getRepos = function() {
-        return $http.get('https://api.github.com/users/claromentis/repos')
+        // return $http.get('https://api.github.com/users/claromentis/repos')
+        return $http.get('/js/github.json')
         .then(function(resp) {
           return resp.data.map(function(repo) {
             $http.get(repo.tags_url).then(function(resp) {

@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Claromentis Github Pages</title>
 
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
   <link rel="stylesheet" href="/css/style.css">
-  <link href="http://structure.claromentis.com/global/css/style.global.4.css" rel="stylesheet" media="screen">
 
 </head>
 <body>
@@ -15,10 +14,22 @@
     <div class="navbar-inner">
       <div class="container">
         <a class="brand" href="/">Claromentis</a>
+        <input type="text" class="pull-right" ng-model="searchText" placeholder="Search Components">
       </div>
     </div>
   </div>
   <div class="container">
+
+    <header>
+        <div class="row-fluid">
+          <div class="span5">
+            <h1><a href="/">Open Source</a></h1>
+          </div>
+          <div class="span7">
+            <p>Welcome to the Claromentis GitHub homepage. Here is a collection of our latest components. They are all designed to work with the Claromentis product. Please note these projects are open source and not covered by the Claromentis support contract, so please do not contact our support department with queries. Do feel free however to post tickets to the community via GitHub!</p>
+          </div>
+        </div>
+    </header>
 
     <div data-ng-view="" class="repo-container"></div>
 
